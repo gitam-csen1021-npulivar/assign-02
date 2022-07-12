@@ -17,8 +17,11 @@ Take a hint to use update() function
 '''
 import unittest
 
-def concatinate_dictionaries(d1,d2):
+def concatinate_dictionaries(d1,d2,d3):
   cse_dict = {}
+  cse_dict.update(d1)
+  cse_dict.update(d2)
+  cse_dict.update(d3)
   # write your code here
 
   return cse_dict
@@ -32,7 +35,7 @@ class Concatination(unittest.TestCase):
     B2 = {"120065001": "Bharat", "120065002" : "Satrugna"}
     B3 = {"130065001": "Dhasaradh", "130065002" : "Babu"}
     output = {"110065001": "Ram", "110065002" : "Lakshman", "120065001": "Bharat", "120065002" : "Satrugna", "130065001": "Dhasaradh", "130065002" : "Babu"}
-    
+
     self.assertEqual(concatinate_dictionaries(B1,B2,B3), output)
 
   def test_02(self):
@@ -40,7 +43,7 @@ class Concatination(unittest.TestCase):
     B2 = {"120065001": "satyam", "120065002" : "sivam"}
     B3 = {"130065001": "ved", "130065002" : "stalon"}
     output = {"110065001": "shyam", "110065002" : "sundar", "120065001": "satyam", "120065002" : "sivam", "130065001": "ved", "130065002" : "stalon"}
-    
+
     self.assertEqual(concatinate_dictionaries(B1,B2,B3), output)
 
 if __name__ == '__main__':
